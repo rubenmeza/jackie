@@ -1,0 +1,10 @@
+# Godot 4 specific
+.godot/
+*.uid
+
+# Export presets (contains credentials)
+export_presets.cfg
+
+# OS generated
+.DS_Store
+Thumbs.db

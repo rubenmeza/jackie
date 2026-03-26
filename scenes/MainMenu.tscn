@@ -1,0 +1,118 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmenu0001"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.25, 0.1, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -220.0
+offset_right = 170.0
+offset_bottom = 220.0
+theme_override_constants/separation = 24
+
+[node name="TitleLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "BACKJACKIE"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 54
+
+[node name="SubtitleLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Learn to play Blackjack"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.8, 0.95, 0.8, 1)
+
+[node name="Spacer" type="Control" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+
+[node name="PlayButton" type="Button" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(340, 72)
+text = "PLAY"
+theme_override_font_sizes/font_size = 28
+
+[node name="HowToPlayButton" type="Button" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(340, 62)
+text = "HOW TO PLAY"
+theme_override_font_sizes/font_size = 22
+
+[node name="RulesPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -400.0
+offset_right = 320.0
+offset_bottom = 400.0
+visible = false
+
+[node name="RulesVBox" type="VBoxContainer" parent="RulesPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RulesTitle" type="Label" parent="RulesPanel/RulesVBox"]
+layout_mode = 2
+text = "How to Play Blackjack"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 26
+
+[node name="RulesText" type="RichTextLabel" parent="RulesPanel/RulesVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(600, 580)
+bbcode_enabled = true
+scroll_active = true
+text = "[b]Goal:[/b] Get closer to 21 than the dealer without going over (busting).
+
+[b]Card Values:[/b]
+  • Number cards (2–10) = face value
+  • J, Q, K = 10 points
+  • Ace = 1 or 11, whichever helps most
+
+[b]Actions:[/b]
+  • [b]Hit[/b] — Draw one more card
+  • [b]Stand[/b] — Keep your current hand
+  • [b]Double[/b] — Double your bet and receive exactly one card
+
+[b]Winning:[/b]
+  • Beat the dealer's total → Win your bet (1×)
+  • Blackjack (Ace + 10-value on first 2 cards) → Win 1.5×
+  • Dealer busts (over 21) → You win
+  • Tie (Push) → Bet is returned
+  • You bust or dealer beats you → Lose your bet
+
+[b]Dealer Rules:[/b]
+  The dealer must hit until reaching 17 or higher.
+  The dealer hits on a soft 17 (Ace + 6).
+
+[b]Tip:[/b] Watch the hint bar at the bottom during play — it shows the recommended move based on basic strategy!"
+
+[node name="CloseRulesButton" type="Button" parent="RulesPanel/RulesVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 54)
+text = "CLOSE"
+theme_override_font_sizes/font_size = 20
