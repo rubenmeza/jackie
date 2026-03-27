@@ -261,13 +261,13 @@ func _update_scores(reveal_dealer: bool = false) -> void:
 	if reveal_dealer:
 		_dealer_score.text = "Dealer: %d" % _dealer.hand.get_value()
 	elif _dealer.hand.size() > 0:
-		var up_value := _dealer.hand.cards[0].value
+		var up_value: int = _dealer.hand.cards[0].value
 		_dealer_score.text = "Dealer: %d + ?" % up_value
 
 
 func _show_hint() -> void:
 	var pv := _player.get_value()
-	var dealer_up := _dealer.hand.cards[0].value if _dealer.hand.size() > 0 else 0
+	var dealer_up: int = _dealer.hand.cards[0].value if _dealer.hand.size() > 0 else 0
 	_hint_bar.text = _basic_strategy_hint(pv, dealer_up, _player.is_soft())
 
 
